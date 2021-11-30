@@ -1,0 +1,69 @@
+{
+  "name": "metomic-takehome",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc && npm run eslint",
+    "start": "npm run build && node ./dist/index.js",
+    "eslint": "eslint \"**/*.ts\"",
+    "test": "rimraf dist coverage && npm run eslint && jest"
+  },
+  "author": "Adam Kosinar",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^27.0.3",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "5.4.0",
+    "eslint": "^8.3.0",
+    "jest": "^27.3.1",
+    "jest-fetch-mock": "^3.0.3",
+    "jest-sonar-reporter": "^2.0.0",
+    "ts-jest": "^27.0.7",
+    "typescript": "^4.5.2"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "fast-csv": "^4.3.6",
+    "lodash": "^4.17.21",
+    "reflect-metadata": "^0.1.13",
+    "restify": "^8.6.0",
+    "tsyringe": "^4.1.0"
+  },
+  "jest": {
+    "verbose": true,
+    "collectCoverage": true,
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "\\.(ts|tsx)$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "testResultsProcessor": "jest-sonar-reporter",
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}",
+      "!src/**/config.{ts,tsx}",
+      "!src/**/theme.{ts,tsx}",
+      "!src/**/index.{ts,tsx}",
+      "!src/**/*.d.ts",
+      "!src/**/*Mock.ts",
+      "!src/**/*Provider.ts"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 96,
+        "functions": 96,
+        "lines": 96,
+        "statements": 96
+      }
+    }
+  },
+  "jestSonar": {
+    "reportPath": "coverage",
+    "reportFile": "test-report.xml",
+    "indent": 4
+  }
+}

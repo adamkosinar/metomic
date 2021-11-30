@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "noImplicitAny": false,
+    "removeComments": true,
+    "resolveJsonModule": true,
+    "noLib": false,
+    "lib": ["es2015", "dom"],
+    "preserveConstEnums": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true,
+    "outDir": "dist",
+    "strictNullChecks": false,
+    "pretty": true
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    "./src/**/*.spec.ts"
+  ]
+}
